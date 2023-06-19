@@ -29,7 +29,7 @@ IF  EXISTS (SELECT * FROM sys.assemblies asms WHERE asms.name = N'CLR_XML')
 GO
 
 -- create
-CREATE ASSEMBLY CLR_XML FROM 'C:\Users\Aleksander\Desktop\AleksanderBartoszek_XML\bin\Debug\AleksanderBartoszek_XML.dll' WITH PERMISSION_SET = EXTERNAL_ACCESS;
+CREATE ASSEMBLY CLR_XML FROM 'path to pre-build library' WITH PERMISSION_SET = EXTERNAL_ACCESS;
 GO
 CREATE PROCEDURE dbo.CreateTableUsingXmlSchema(@tableName NVARCHAR(128), @xmlSchema NVARCHAR(4000)) AS EXTERNAL NAME CLR_XML.CreateTable.CreateTableUsingXmlSchema;
 GO
